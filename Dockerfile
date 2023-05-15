@@ -7,6 +7,7 @@ ENV FORCE_UNSAFE_CONFIGURE=1
 
 #Which version should we build
 ARG RUTOS_VERSION
+ARG RUTOS_CHECKSUM
 
 #Based on https://wiki.teltonika-networks.com/view/RUTOS_Software_Development_Kit_instructions
 RUN \
@@ -70,6 +71,7 @@ USER $USER_UID:$USER_GID
 RUN \
     cd ~ && \
     wget https://wiki.teltonika-networks.com/gpl/${RUTOS_VERSION} && \
+    echo ${RUTOS_CHECKSUM} ${RUTOS_VERSION} | md5sum -c --status && \
     tar -xf ${RUTOS_VERSION} && \
     rm ${RUTOS_VERSION}
 
