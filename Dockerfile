@@ -43,14 +43,19 @@ RUN \
         xsltproc  \
         zlib1g-dev  \
         u-boot-tools  \
-        nodejs  \
-        nodejs-dev  \
-        node-gyp  \
-        npm  \
         jq \
         nano \
+        curl \
+        dirmngr \
+        apt-transport-https \
+        lsb-release \
+        ca-certificates \
         sudo
 
+RUN \
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
+    sudo apt -y install nodejs && \
+    npm install -g node-gyp
 
 #Building with root permissions will fail miserably
 #See: https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
