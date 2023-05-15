@@ -4,7 +4,8 @@ on: [workflow_dispatch]
 
 #See latest SDK: https://wiki.teltonika-networks.com/view/Software_Development_Kit
 env:
-  VERSION: "RUTX_R_GPL_00.07.02.2.tar.gz"
+  VERSION: "RUTX_R_GPL_00.07.04.2.tar.gz"
+  CHECKSUM: "332c6e066f7d74670af65938f1312dc5"
 
 jobs:
   build:
@@ -22,6 +23,7 @@ jobs:
           docker build \
             --pull \
             --build-arg RUTOS_VERSION=$VERSION \
+            --build-arg RUTOS_CHECKSUM=$CHECKSUM \
             -t ghcr.io/paresy/rutx-sdk:$VERSION \
             -f Dockerfile .
 

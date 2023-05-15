@@ -71,7 +71,7 @@ USER $USER_UID:$USER_GID
 RUN \
     cd ~ && \
     wget https://wiki.teltonika-networks.com/gpl/${RUTOS_VERSION} && \
-    echo ${RUTOS_CHECKSUM} ${RUTOS_VERSION} | md5sum -c --status && \
+    echo "${RUTOS_CHECKSUM} ${RUTOS_VERSION}" | md5sum -c --status && \
     tar -xf ${RUTOS_VERSION} && \
     rm ${RUTOS_VERSION}
 
