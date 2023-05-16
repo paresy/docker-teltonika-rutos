@@ -50,7 +50,8 @@ RUN \
         apt-transport-https \
         lsb-release \
         ca-certificates \
-        sudo
+        sudo \
+        netbeans
 
 RUN \
     curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
