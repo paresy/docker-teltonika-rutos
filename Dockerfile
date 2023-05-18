@@ -77,10 +77,11 @@ USER $USER_UID:$USER_GID
 #Download/Unpack
 RUN \
     cd ~ && \
-    wget https://wiki.teltonika-networks.com/gpl/${RUTOS_VERSION} && \
-    echo "${RUTOS_CHECKSUM} ${RUTOS_VERSION}" | md5sum -c --status && \
-    tar -xf ${RUTOS_VERSION} && \
-    rm ${RUTOS_VERSION}
+    export RUTOS_FILE=RUTX_R_GPL_${RUTOS_VERSION}.tar.gz && \
+    wget https://wiki.teltonika-networks.com/gpl/${RUTOS_FILE} && \
+    echo "${RUTOS_CHECKSUM} ${RUTOS_FILE}" | md5sum -c --status && \
+    tar -xf ${RUTOS_FILE} && \
+    rm ${RUTOS_FILE}
 
 #Build
 RUN \
