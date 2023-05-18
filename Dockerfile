@@ -53,6 +53,7 @@ RUN \
         sudo \
         netbeans
 
+#SDK needs NodeJS 12.x which is not being shipped by Ubuntu 18.04
 RUN \
     curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
     sudo apt -y install nodejs && \
