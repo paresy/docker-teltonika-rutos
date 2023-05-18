@@ -1,4 +1,4 @@
-# Teltonika RUTOS
+# Teltonika RUTOS SDK for Docker
 Dockerized Toolchain for the RUTX series
 
 ```
@@ -9,4 +9,5 @@ docker build \
        -f Dockerfile .
 ```
 
-See also prebuild images here: https://github.com/paresy?tab=packages
+See also prebuild images here: 
+https://github.com/paresy/docker-teltonika-rutos/pkgs/container/rutx-sdk
