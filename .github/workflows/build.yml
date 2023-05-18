@@ -31,6 +31,7 @@ jobs:
       - name: Build
         run: |
           docker build \
+            --platform linux/amd64 \
             --pull \
             --build-arg RUTOS_VERSION=$VERSION \
             --build-arg RUTOS_CHECKSUM=$CHECKSUM \
