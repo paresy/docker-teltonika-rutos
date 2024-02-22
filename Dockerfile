@@ -78,7 +78,7 @@ USER $USER_UID:$USER_GID
 RUN \
     cd ~ && \
     export RUTOS_FILE=RUTX_R_GPL_${RUTOS_VERSION}.tar.gz && \
-    wget https://wiki.teltonika-networks.com/gpl/${RUTOS_FILE} && \
+    wget https://firmware.teltonika-networks.com/7.6.5/RUTX/${RUTOS_FILE} && \
     echo "${RUTOS_CHECKSUM} ${RUTOS_FILE}" | md5sum -c --status && \
     tar -xf ${RUTOS_FILE} && \
     rm ${RUTOS_FILE}
