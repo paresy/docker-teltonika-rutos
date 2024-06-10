@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 WORKDIR /home
 
@@ -51,13 +51,9 @@ RUN \
         lsb-release \
         ca-certificates \
         sudo \
-        netbeans
-
-#SDK needs NodeJS 12.x which is not being shipped by Ubuntu 18.04
-RUN \
-    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
-    sudo apt -y install nodejs && \
-    npm install -g node-gyp
+        netbeans \
+	nodejs \
+ 	npm
 
 #Building with root permissions will fail miserably
 #See: https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
