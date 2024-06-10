@@ -87,6 +87,6 @@ RUN \
 #Build
 RUN \
     cd ~ && \
-    cd rutos-ipq40xx-rutx-gpl &&\
+    cd rutos-ipq40xx-rutx-sdk &&\
     ./scripts/feeds update -a &&\
     make -j $(nproc)
