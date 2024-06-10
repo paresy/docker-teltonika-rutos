@@ -11,49 +11,66 @@ ARG RUTOS_CHECKSUM
 
 #Based on https://wiki.teltonika-networks.com/view/RUTOS_Software_Development_Kit_instructions
 RUN \
-	apt-get update &&\
-	apt-get install -y  \
+    apt-get update &&\
+    apt-get install -y  \
+        nodejs \
+        npm \
+        binutils \
+        binutils-gold \
+        bison \
         build-essential  \
-        ccache  \
-        ecj  \
-        fastjar  \
-        file  \
-        g++  \
-        gawk  \
-        gettext  \
-        git  \
-        java-propose-classpath  \
-        libelf-dev  \
-        libncurses5-dev  \
-        libncursesw5-dev  \
-        libssl1.0-dev  \
-        python  \
-        python2.7-dev  \
-        python3  \
-        unzip  \
-        wget  \
-        python3-distutils  \
-        python3-setuptools  \
-        rsync  \
-        subversion  \
-        swig  \
-        time  \
-        libffi-dev  \
-        libtool  \
-        xsltproc  \
-        zlib1g-dev  \
-        u-boot-tools  \
-        jq \
-        nano \
-        curl \
-        dirmngr \
-        apt-transport-https \
-        lsb-release \
+        bzip2 \
         ca-certificates \
-        sudo \
-        netbeans \
-	nodejs \
- 	npm
+        curl \
+        default-jdk \
+        device-tree-compiler \
+        devscripts \
+        ecj  \
+        file  \
+        flex  \
+        fuse \
+        g++  \
+        gcc  \
+        gengetopt \
+        gettext \
+        git \
+        gnupg \
+        groff \
+        help2man \
+        java-wrappers \
+        java-propose-classpath \
+        jq \
+        libc6-dev \
+        libffi-dev \
+        libncurses5-dev \
+        libpcre3-dev \
+        libsqlite3-dev \
+        libssl-dev \
+        libxml-parser-perl \
+        lz4 \
+        make \
+        ocaml \
+        ocaml-findlib \
+        ocaml-nox \
+        patch \
+        pkg-config \
+        python3 \
+        python3-dev \
+        python3-distutils \
+        python3-yaml \
+        rsync \
+        ruby \
+        sharutils \
+        subversion \
+        swig \
+        u-boot-tools \
+        unzip \
+        uuid-dev \
+        vim-common \
+        wget \
+        zip \
+        zlib1g-dev \
+        sudo
 
 #Building with root permissions will fail miserably
 #See: https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
