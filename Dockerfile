@@ -13,8 +13,6 @@ ARG RUTOS_CHECKSUM
 RUN \
     apt-get update &&\
     apt-get install -y  \
-        nodejs \
-        npm \
         binutils \
         binutils-gold \
         bison \
@@ -31,6 +29,7 @@ RUN \
         fuse \
         g++  \
         gcc  \
+        gcc-multilib  \
         gengetopt \
         gettext \
         git \
@@ -70,7 +69,15 @@ RUN \
         wget \
         zip \
         zlib1g-dev \
+        # These packages are also required \
+        gawk \
         sudo
+
+#SDK needs NodeJS 18.x which is not being shipped by Ubuntu 22.04
+RUN \
+    curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
+    sudo apt -y install nodejs && \
+    npm install -g node-gyp
 
 #Building with root permissions will fail miserably
 #See: https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
