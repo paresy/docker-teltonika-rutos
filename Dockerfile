@@ -71,11 +71,13 @@ RUN \
         zlib1g-dev \
         # These packages are also required \
         gawk \
-        sudo
+        sudo \
+        cmake \
+        gperf
 
-#SDK needs NodeJS 18.x which is not being shipped by Ubuntu 22.04
+#SDK needs NodeJS 20.x which is not being shipped by Ubuntu 22.04
 RUN \
-    curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
+    curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
     sudo apt -y install nodejs && \
     npm install -g node-gyp
 
