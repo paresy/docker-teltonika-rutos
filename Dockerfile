@@ -20,6 +20,7 @@ RUN \
         bzip2 \
         ca-certificates \
         curl \
+        cmake \
         default-jdk \
         device-tree-compiler \
         devscripts \
@@ -28,34 +29,42 @@ RUN \
         flex  \
         fuse \
         g++  \
+        gawk \
         gcc  \
         gcc-multilib  \
+        gcovr \
         gengetopt \
         gettext \
         git \
         gnupg \
         groff \
+        gperf \
         help2man \
         java-wrappers \
         java-propose-classpath \
         jq \
         libc6-dev \
         libffi-dev \
+        libexpat-dev \
         libncurses5-dev \
         libpcre3-dev \
         libsqlite3-dev \
         libssl-dev \
         libxml-parser-perl \
         lz4 \
+        liblz4-dev \
+        libzstd-dev \
         make \
         ocaml \
         ocaml-findlib \
         ocaml-nox \
         patch \
         pkg-config \
-        python3 \
-        python3-dev \
-        python3-distutils \
+        psmisc \
+        python-is-python3 \
+        python3.11 \
+        python3.11-dev \
+        python3-setuptools \
         python3-yaml \
         rsync \
         ruby \
@@ -70,10 +79,7 @@ RUN \
         zip \
         zlib1g-dev \
         # These packages are also required \
-        gawk \
-        sudo \
-        cmake \
-        gperf
+        sudo
 
 #SDK needs NodeJS 20.x which is not being shipped by Ubuntu 22.04
 RUN \
