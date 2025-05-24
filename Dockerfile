@@ -5,6 +5,9 @@ WORKDIR /home
 #Required since Debian Buster
 ENV FORCE_UNSAFE_CONFIGURE=1
 
+#Fix getting stuck on installing tzdata
+ENV DEBIAN_FRONTEND noninteractive
+
 #Which version should we build
 ARG RUTOS_VERSION
 ARG RUTOS_CHECKSUM
