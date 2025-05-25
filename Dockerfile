@@ -115,9 +115,11 @@ RUN \
     tar -xf ${RUTOS_FILE} && \
     rm ${RUTOS_FILE}
 
-#Build
+#Prepare
 RUN \
     cd ~ && \
     cd rutos-ipq40xx-rutx-sdk &&\
-    ./scripts/feeds update -a &&\
-    make -j $(nproc)
+    ./scripts/feeds update -a
+
+#Build
+RUN  make -j $(nproc) V=s
