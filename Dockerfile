@@ -90,6 +90,10 @@ RUN \
     sudo apt -y install nodejs && \
     npm install -g node-gyp
 
+#SDK needs esbuild and it will wait interactively for the user to press enter if it is not installed
+RUN \
+   npm install -g esbuild
+
 #Building with root permissions will fail miserably
 #See: https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
 
