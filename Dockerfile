@@ -82,7 +82,8 @@ RUN \
         zip \
         zlib1g-dev \
         # These packages are also required \
-        sudo
+        sudo \
+        libcap2-bin
 
 #SDK needs NodeJS 20.x which is not being shipped by Ubuntu 22.04
 RUN \
