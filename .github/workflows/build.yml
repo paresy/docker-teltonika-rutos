@@ -4,8 +4,8 @@ on: [workflow_dispatch]
 
 #See latest SDK: https://wiki.teltonika-networks.com/view/Software_Development_Kit
 env:
-  VERSION: "00.07.14.2"
-  CHECKSUM: "eca6302c7a431e1f1934f90e27892d7f"
+  VERSION: "00.07.15.2"
+  CHECKSUM: "0d9cdfa4294a823f3dcc27a13cef15f0"
 
 jobs:
   build:
